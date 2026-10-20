@@ -235,7 +235,24 @@ def cancel_order(ctx: AuthContext, order_id: int, reason: str) -> dict[str, Any]
     if paused is not None:
         return {"ok": False, "error": "paused", "reason": paused}
     ### YOUR CODE HERE (HW1)
-    raise NotImplementedError("HW1: implement cancel_order")
+    with db.connection() as conn:
+         # does the order exist? 
+         order = db.get_order(conn, order_id)
+         if order is None:
+              return {"ok": False, "error": "not_found", "reason": f"No order with id {order_id}."}
+         # 2. scope FIRST: may this caller touch this order at all? 
+         if not can_cancel_order(ctx, order.user_id, order.store_id):
+              return permission_denied(f"Role '{ctx.role}' is not allowed to cancel order {order_id}.")
+
+         # 3. status SECOND: onlyt "placed" orders can be cancelled.
+         if order.status != "placed":
+                return {"ok": False, "error": "not_eligible", 
+                "reason": f"Order {order_id} has status '{order.status}'; only 'placed' orders can be cancelled."}
+
+         # 4. all checks passed: write the change . 
+         db.set_order_status(conn, order_id, "cancelled")
+    return {"ok": True, "order_id": order_id, "status": "cancelled"}
+
 
 
 def find_order(ctx: AuthContext, query: str) -> dict[str, Any]:
