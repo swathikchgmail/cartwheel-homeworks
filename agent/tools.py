@@ -174,7 +174,23 @@ def list_my_orders(ctx: AuthContext) -> dict[str, Any]:
         tool: the model cannot ask for someone else's orders through it.
     """
     ### YOUR CODE HERE (HW1)
-   
+    # support has no orders of its own
+    if ctx.role == "support":
+         return {"ok": False, "error": "invalid_argument",
+                  "reason": "Support staff have no orders of their own; "
+                  "use get_order to look up specific orders."}
+    # 2. pick th equery from the role. the scope comes from ctx, never the user.
+    with db.connection() as conn:
+        if ctx.role == "shopper" and ctx.user_id is not None:
+              orders  = db.list_orders_for_user(conn, ctx.user_id, DEFAULT_ORDER_LIMIT)
+        elif ctx.role == "merchant" and ctx.store_id  is not None:
+                orders = db.list_orders_for_store(conn, ctx.store_id, DEFAULT_ORDER_LIMIT)
+        else:
+                return permission_denied(f"Role '{ctx.role}' is not supported or missing required identity.")
+    #3 . convert and count 
+    public = [o.to_public_dict() for o in orders]
+    return {"ok": True, "orders": public, "count": len(public)}
+
 
 def cancel_order(ctx: AuthContext, order_id: int, reason: str) -> dict[str, Any]:
     """Cancel an order. Risk tier: write.
