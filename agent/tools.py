@@ -53,7 +53,20 @@ def get_policy(ctx: AuthContext, policy_id: str) -> dict[str, Any]:
         agent.helpcenter.load_policy_docs() returns every parsed doc.
     """
     ### YOUR CODE HERE (HW1)
-    raise NotImplementedError("HW1: implement get_policy")
+    for doc in load_policy_docs():
+        if doc.policy_id == policy_id:
+            return {
+                "ok": True,
+                "policy_id": doc.policy_id,
+                "title": doc.title,
+                "audience": doc.audience,
+                "body": doc.body,
+            }     
+    return {
+        "ok": False, 
+        "error": "not_found", 
+        "reason": f"No policy with id: '{policy_id}'.",
+        }
 
 
 def search_products(
@@ -203,4 +216,24 @@ def find_order(ctx: AuthContext, query: str) -> dict[str, Any]:
         match, return {"ok": True, "orders": []}.
     """
     ### YOUR CODE HERE (HW1)
-    raise NotImplementedError("HW1: implement find_order")
+    if ctx.role == "shopper" and ctx.user_id is not None:
+        scope = {"user_id": ctx.user_id}
+    elif ctx.role == "merchant" and ctx.store_id is not None:
+        scope = {"store_id": ctx.store_id}
+    elif ctx.role == "support":
+        scope = {"all_orders": True}
+    else:
+        return permission_denied(f"Role '{ctx.role}' is not supported or missing required identity.")   
+
+    # Search for orders matching the query within the determined scope
+    needle = query.strip().lower()
+
+    if len(needle) < 3:
+        return {"ok": True, "orders": []}  # Return empty if query is too short
+
+    with db.connection() as conn:
+        candidates = db.list_order_search_candidates(conn, **scope)
+        titles = {p.id: p.title.lower() for p in db.list_products(conn)}
+
+    matches = [o for o in candidates if needle in titles.get(o.product_id, "")]
+    return {"ok": True, "orders": [o.to_public_dict() for o in matches[:5]]}
