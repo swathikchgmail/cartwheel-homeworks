@@ -20,6 +20,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from numpy.char import title
+
 from agent import db
 from agent.auth import AuthContext, can_cancel_order, permission_denied
 from agent.helpcenter import load_policy_docs
@@ -109,8 +111,45 @@ def search_products(
         Use `with db.connection() as conn:` to close the database automatically.
     """
     ### YOUR CODE HERE (HW1)
-    raise NotImplementedError("HW1: implement search_products")
-
+     # part 1: validate inputs before touching the db
+    if not query or query.strip() == "":
+            return {"ok":False, "error": "invalid_argument", "reason":"search query must not be empty."}
+    if max_price_usd is not None and max_price_usd <= 0:
+            return {"ok": False, "error": "invalid_argument", "reason":f"max_price_usd must be positive, got {max_price_usd}."}
+    limit = max(1, min(limit, MAX_SEARCH_LIMIT))  # clamp limit to [1, MAX_SEARCH_LIMIT]
+    
+    tokens = query.lower().split()
+    
+    with db.connection() as conn:
+            # part 2: resolve the store , if one was named.
+            store_id = None
+            if store is not None:
+                found = db.get_store_by_name(conn, store)
+                if found is None:
+                    return {"ok": False, "error": "not_found", "reason": f"No store named {store!r}."}
+                store_id = found.id
+            candidates = db.list_products(conn, store_id)
+    
+        # part 3: filter, sort , then cut, 
+    matches = []
+    for p in candidates:
+            text = f"{p.title} {p.description}".lower()
+            if not all (tok in text for tok in tokens):
+                continue
+            if max_price_usd is not None and p.price_usd > max_price_usd:
+                continue
+            if max_price_usd is not None and p.price_usd > max_price_usd:
+                continue
+            matches.append(p)
+    
+    matches.sort(key=lambda p: (p.price_usd, p.id))
+    products = [
+            {"product_id": p.id, "store_id": p.store_id, 
+             "title": p.title, "price_usd": p.price_usd} 
+             for p in matches[:limit]
+        ] 
+    return {"ok": True, "products": products, "count": len(products)}
+    
 
 def list_my_orders(ctx: AuthContext) -> dict[str, Any]:
     """List recent orders in the caller's own scope. Risk tier: read.
@@ -135,8 +174,7 @@ def list_my_orders(ctx: AuthContext) -> dict[str, Any]:
         tool: the model cannot ask for someone else's orders through it.
     """
     ### YOUR CODE HERE (HW1)
-    raise NotImplementedError("HW1: implement list_my_orders")
-
+   
 
 def cancel_order(ctx: AuthContext, order_id: int, reason: str) -> dict[str, Any]:
     """Cancel an order. Risk tier: write.
