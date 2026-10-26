@@ -18,6 +18,8 @@ They are marked xfail and flip to passing as you implement each function.
 
 from __future__ import annotations
 
+import difflib
+import re
 from typing import Any
 
 from numpy.char import title
@@ -29,6 +31,40 @@ from agent.killswitch import kill_switch
 
 MAX_SEARCH_LIMIT = 25
 DEFAULT_ORDER_LIMIT = 20
+
+# find_order matching: a title matches when at least half of its words appear
+# in the query, so extra words such as a store name do not prevent a match.
+TITLE_MATCH_THRESHOLD = 0.5
+FUZZY_WORD_RATIO = 0.75  # words of 4+ letters may differ by a small typo
+QUERY_STOPWORDS = {"a", "an", "and", "bought", "for", "from", "got", "i", "it",
+                   "my", "of", "order", "that", "the", "this", "with"}
+
+
+def _words(text: str) -> list[str]:
+    return [w for w in re.findall(r"[a-z0-9]+", text.lower())
+            if len(w) >= 2 and w not in QUERY_STOPWORDS]
+
+
+def _word_matches(title_word: str, query_words: list[str]) -> bool:
+    for word in query_words:
+        if word == title_word:
+            return True
+        if (len(word) >= 4 and len(title_word) >= 4
+                and difflib.SequenceMatcher(None, word, title_word).ratio() >= FUZZY_WORD_RATIO):
+            return True
+    return False
+
+
+def _title_matches(query: str, title: str) -> bool:
+    """True when the query names the product, allowing extra words and typos."""
+    if query in title:
+        return True
+    title_words = _words(title)
+    if not title_words:
+        return False
+    query_words = _words(query)
+    found = sum(_word_matches(word, query_words) for word in title_words)
+    return found / len(title_words) >= TITLE_MATCH_THRESHOLD
 
 
 def get_policy(ctx: AuthContext, policy_id: str) -> dict[str, Any]:
@@ -306,5 +342,5 @@ def find_order(ctx: AuthContext, query: str) -> dict[str, Any]:
         candidates = db.list_order_search_candidates(conn, **scope)
         titles = {p.id: p.title.lower() for p in db.list_products(conn)}
 
-    matches = [o for o in candidates if needle in titles.get(o.product_id, "")]
+    matches = [o for o in candidates if _title_matches(needle, titles.get(o.product_id, ""))]
     return {"ok": True, "orders": [o.to_public_dict() for o in matches[:5]]}
