@@ -35,7 +35,7 @@ export function queueConversations() {
   return batch.items.map((item) => index.get(item.session_id)).filter(Boolean);
 }
 
-export const humanNotes = () => S.server.annotations.filter((a) => a.author === "human");
+export const humanNotes = () => S.server.annotations.filter((a) => a.author === "human" && !a.retired_by);
 
 export const notesFor = (sessionId) => humanNotes().filter((a) => a.session_id === sessionId);
 

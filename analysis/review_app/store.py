@@ -77,7 +77,10 @@ class ReviewStore:
             "kind": kind, "note": note, "quote": quote or None, "batch": batch,
             "author": "human", "accepted_from": accepted_from, "ts": _now(), "history": [],
         }
-        self._save_annotations([*self.annotations(), row])
+        rows = self.annotations()
+        if kind == "open_code":
+            _retire_no_failure(rows, row)
+        self._save_annotations([*rows, row])
         return row
 
     def update_annotation(self, annotation_id: str, note: str) -> dict[str, Any]:
@@ -194,6 +197,14 @@ def _find(rows: list[dict[str, Any]], row_id: str) -> dict[str, Any]:
         if row["id"] == row_id:
             return row
     raise KeyError(row_id)
+
+
+def _retire_no_failure(rows: list[dict[str, Any]], open_code: dict[str, Any]) -> None:
+    """An open code contradicts the conversation's "no failure" note: mark it
+    retired (kept in the file) rather than deleting it."""
+    for prior in rows:
+        if prior["session_id"] == open_code["session_id"] and prior["kind"] == "no_failure" and not prior.get("retired_by"):
+            prior.update(retired_by=open_code["id"], retired_ts=open_code["ts"])
 
 
 def _pending(rows: list[dict[str, Any]], suggestion_id: str) -> dict[str, Any]:

@@ -58,6 +58,34 @@ def test_editing_a_note_keeps_the_original_in_history(store: ReviewStore) -> Non
     assert [h["note"] for h in edited["history"]] == ["first wording"]
 
 
+def test_open_code_retires_the_conversations_no_failure_note(store: ReviewStore) -> None:
+    old = store.add_annotation(**ANCHOR, step="reply", note="", kind="no_failure")
+    new = store.add_annotation(**{**ANCHOR, "trace_id": "t2", "turn": 2}, step="reply", note="promised refund now")
+    [retired] = [a for a in store.annotations() if a["id"] == old["id"]]
+    assert retired["retired_by"] == new["id"]
+
+
+def test_retired_no_failure_note_is_kept_in_the_file(store: ReviewStore) -> None:
+    store.add_annotation(**ANCHOR, step="reply", note="", kind="no_failure")
+    store.add_annotation(**ANCHOR, step="reply", note="promised refund now")
+    assert [a["kind"] for a in store.annotations()] == ["no_failure", "open_code"]
+
+
+def test_open_code_leaves_other_conversations_no_failure_notes_alone(store: ReviewStore) -> None:
+    other = store.add_annotation(**{**ANCHOR, "session_id": "s2"}, step="reply", note="", kind="no_failure")
+    store.add_annotation(**ANCHOR, step="reply", note="promised refund now")
+    [kept] = [a for a in store.annotations() if a["id"] == other["id"]]
+    assert "retired_by" not in kept
+
+
+def test_accepting_a_suggestion_retires_the_no_failure_note(store: ReviewStore) -> None:
+    old = store.add_annotation(**ANCHOR, step="reply", note="", kind="no_failure")
+    sug = store.add_suggestion(**ANCHOR, step="reply", note="promised refund now", source="agent")
+    store.accept_suggestion(sug["id"])
+    [retired] = [a for a in store.annotations() if a["id"] == old["id"]]
+    assert retired.get("retired_by")
+
+
 def test_accepting_a_suggestion_creates_a_linked_human_annotation(store: ReviewStore) -> None:
     sug = store.add_suggestion(**ANCHOR, step="reply", note="hedges after refusal", source="search:x")
     ann = store.accept_suggestion(sug["id"])
