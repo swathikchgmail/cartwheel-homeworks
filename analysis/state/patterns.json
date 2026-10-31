@@ -1,1 +1,314 @@
-{"modes": []}
+{
+  "modes": [
+    {
+      "name": "wrong_governing_policy",
+      "status": "candidate",
+      "definition": "Fail if the reply answers from a policy that does not govern the request: the platform return window when the order in question is from a store with its own window, or the refund window when the user asked to dispute a charge (cw-disputes, always a human). Pass if the reply uses the governing policy or states no window.",
+      "boundary": "",
+      "nearest_mode": "",
+      "requirement_source": "cw-store-overrides, facts.yaml store_overrides.precedence, cw-disputes, ESC-3, RESP-1",
+      "evaluator_type": null,
+      "created_from": [
+        "ann-a32e9289c2",
+        "ann-17be6fbae6",
+        "ann-5863ac07cb",
+        "ann-e6bff7aa29",
+        "ann-740c390b9f",
+        "ann-b6131dc15d",
+        "ann-a64c52fadd",
+        "ann-a7bc1b4f2f",
+        "ann-cf80d75387"
+      ],
+      "example_trace_ids": [],
+      "close_negative_trace_ids": [],
+      "history": [
+        {
+          "ts": "2026-10-31T18:14:51.606Z",
+          "field": "definition",
+          "from": "Fail if the order’s store has its own return/refund policy and the agent answers or cites the platform policy instead of the store’s policy.",
+          "to": "Fail if the order the user asks about is from a store whose own policy page sets a return window, and the reply states or cites the platform window instead. Pass if the reply states no window, or the order belongs to a store without an override.",
+          "reason": "batch 3 round 1: the search matched any order list that included an override store; the mode applies only to the order in question"
+        },
+        {
+          "ts": "2026-10-31T19:20:13.777Z",
+          "field": "name",
+          "from": "store_policy_ignored",
+          "to": "wrong_governing_policy",
+          "reason": "batch 4: merged disputes handled as refunds (0220, 0250, 0179); one fix (work out which policy governs the request before answering) covers both"
+        },
+        {
+          "ts": "2026-10-31T19:20:13.777Z",
+          "field": "definition",
+          "from": "Fail if the order the user asks about is from a store whose own policy page sets a return window, and the reply states or cites the platform window instead. Pass if the reply states no window, or the order belongs to a store without an override.",
+          "to": "Fail if the reply answers from a policy that does not govern the request: the platform return window when the order in question is from a store with its own window, or the refund window when the user asked to dispute a charge (cw-disputes, always a human). Pass if the reply uses the governing policy or states no window.",
+          "reason": "batch 4: merged disputes handled as refunds (0220, 0250, 0179); one fix (work out which policy governs the request before answering) covers both"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "unconfirmed_outcome_promised",
+      "status": "candidate",
+      "definition": "Fail if the reply promises or predicts an outcome (refund done or approved, an exception, a refund method) that no tool result confirmed, or that the rules don’t allow.",
+      "boundary": "",
+      "nearest_mode": "",
+      "requirement_source": "RESP-2; ESC-1; facts.yaml , refund_method",
+      "evaluator_type": null,
+      "created_from": [
+        "ann-ae327a5c78",
+        "ann-8b30307c29",
+        "ann-cb5a259016",
+        "ann-b624973a79",
+        "ann-3f1fe89330"
+      ],
+      "example_trace_ids": [],
+      "close_negative_trace_ids": [],
+      "history": [],
+      "notes": ""
+    },
+    {
+      "name": "bad_search_false_claim",
+      "status": "candidate",
+      "definition": "Fail if the agent’s tool input ignores or garbles what the user asked (store, product), and the reply then states something false because of it, such as “no items” or “can’t find that store”",
+      "boundary": "",
+      "nearest_mode": "",
+      "requirement_source": "TOOL-3 contract; RESP-3",
+      "evaluator_type": null,
+      "created_from": [
+        "ann-49c007cc67",
+        "ann-94f379e7ce",
+        "ann-d811444c7d",
+        "ann-fac27cc8a3"
+      ],
+      "example_trace_ids": [],
+      "close_negative_trace_ids": [],
+      "history": [
+        {
+          "ts": "2026-10-30T20:34:50.283Z",
+          "field": "definition",
+          "from": "",
+          "to": "Fail if the agent’s tool input ignores or garbles what the user asked (store, product), and the reply then states something false because of it, such as “no items” or “can’t find that store",
+          "reason": "initial definition after batch 1"
+        },
+        {
+          "ts": "2026-10-31T03:41:50.993Z",
+          "field": "definition",
+          "from": "Fail if the agent’s tool input ignores or garbles what the user asked (store, product), and the reply then states something false because of it, such as “no items” or “can’t find that store",
+          "to": "Fail if the agent’s tool input ignores or garbles what the user asked (store, product), and the reply then states something false because of it, such as “no items” or “can’t find that store”",
+          "reason": "fix missing closing quote"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "policy_not_cited",
+      "status": "candidate",
+      "definition": "Fail if the reply makes a statement that comes from a policy document without citing its policy id. Pass if facts that come from a tool result have no id.",
+      "boundary": "",
+      "nearest_mode": "",
+      "requirement_source": "RESP-1",
+      "evaluator_type": null,
+      "created_from": [
+        "ann-d987bae228",
+        "ann-8397a2977d",
+        "ann-593d6639d0",
+        "ann-058232b632",
+        "ann-a2affd0a1a",
+        "ann-73d2bcccde",
+        "ann-daf0a5201b",
+        "ann-12e54d198f"
+      ],
+      "example_trace_ids": [],
+      "close_negative_trace_ids": [],
+      "history": [
+        {
+          "ts": "2026-10-30T20:35:36.486Z",
+          "field": "definition",
+          "from": "",
+          "to": "Fail if the reply makes a policy statement without citing any policy id.",
+          "reason": "initial definition after batch 1"
+        },
+        {
+          "ts": "2026-10-31T03:36:13.016Z",
+          "field": "definition",
+          "from": "Fail if the reply makes a policy statement without citing any policy id.",
+          "to": "Fail if the reply makes a statement that comes from a policy document without citing its policy id. Pass if facts that come from a tool result have no id.",
+          "reason": "batch2 modifications"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "question_not_answered",
+      "status": "candidate",
+      "definition": "Fail if the reply doesn’t answer what the user asked when the answer was available from the tools or the help center, by asking for unneeded information, repeating a question, offering to act without acting, or escalating something it could answer or decline. Pass if it answers, or escalates an ESC-listed case and still answers what it can.",
+      "boundary": "",
+      "nearest_mode": "",
+      "requirement_source": "ESC-1 to ESC-4, SCOPE-2, RESP-5",
+      "evaluator_type": null,
+      "created_from": [
+        "ann-7dda783c83",
+        "ann-97038ebe8c",
+        "ann-fc795708a2",
+        "ann-e73461524e",
+        "ann-c3988077b5",
+        "ann-f4064237a6",
+        "ann-3786d3f688",
+        "ann-4a7593eea5"
+      ],
+      "example_trace_ids": [],
+      "close_negative_trace_ids": [],
+      "history": [
+        {
+          "ts": "2026-10-30T20:36:49.686Z",
+          "field": "definition",
+          "from": "",
+          "to": "Fail if the reply doesn’t answer what the user asked and asks for information it doesn’t need, or repeats a question.",
+          "reason": "initial definition after batch 1"
+        },
+        {
+          "ts": "2026-10-31T03:28:27.348Z",
+          "field": "definition",
+          "from": "Fail if the reply doesn’t answer what the user asked and asks for information it doesn’t need, or repeats a question.",
+          "to": "Fail if the reply doesn’t answer what the user asked when the answer was available from the tools or the help center, by asking for unneeded information, repeating a question, offering to act without acting, or escalating something it could answer or decline. Pass if it answers, or escalates an ESC-listed case and still answers what it can.",
+          "reason": "batch2 additions"
+        }
+      ],
+      "notes": "0182 “asked the merchant to confirm their store instead of calling list_my_orders”\n0212 “said it could search the catalog but never did”\n0090 “escalated instead of answering; cw-store-overrides answers it”\n0180 “escalated instead of answering; cw-roles says no exceptions”\n0053 “tax/legal is out of scope: should decline, instead offered to escalate”"
+    },
+    {
+      "name": "incomplete_or_invalid_results_shown",
+      "status": "rejected",
+      "definition": "Fail if the reply presents product search results as complete and valid when the tool output doesn’t support that: either it lists the results as the full set although the tool returned exactly as many as the limit the agent set, or it shows a product with invalid data (negative price, empty title) as a normal listing.",
+      "boundary": "",
+      "nearest_mode": "",
+      "requirement_source": "RESP-3 (state when information is missing or inconsistent); TOOL-3 search_products contract (result limit 1–25)",
+      "evaluator_type": null,
+      "created_from": [
+        "ann-1bad4407b2"
+      ],
+      "example_trace_ids": [],
+      "close_negative_trace_ids": [],
+      "history": [
+        {
+          "ts": "2026-10-30T20:43:39.955Z",
+          "field": "definition",
+          "from": "",
+          "to": "Fail if the reply presents product search results as complete and valid when the tool output doesn’t support that: either it lists the results as the full set although the tool returned exactly as many as the limit the agent set, or it shows a product with invalid data (negative price, empty title) as a normal listing.",
+          "reason": "initial definition after batch 1"
+        },
+        {
+          "ts": "2026-10-31T03:41:50.993Z",
+          "field": "status",
+          "from": "candidate",
+          "to": "rejected",
+          "reason": "batch 2: split into results_truncated_silently and invalid_data_not_flagged (different fixes)"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "fact_not_supported_by_source",
+      "status": "candidate",
+      "definition": "Fail if the reply states a number, date, or fact (such as stock or availability) that conflicts with the tool result or a cited policy, or that no tool result or policy supports. Pass if every stated fact matches its source; rounding is fine if it stays true.",
+      "boundary": "",
+      "nearest_mode": "",
+      "requirement_source": "RESP-3, facts.yaml (return_window_days, payout days)",
+      "evaluator_type": null,
+      "created_from": [
+        "ann-2f58fbcd2a",
+        "ann-d68bb342a7",
+        "ann-103084c43e",
+        "ann-7b1e3e713f",
+        "ann-0bae082807",
+        "ann-ec6d1d1afb",
+        "ann-c58ffef2ea",
+        "ann-b370038faa",
+        "ann-c87d1342f1",
+        "ann-153210126c",
+        "ann-392ee7cf61"
+      ],
+      "example_trace_ids": [],
+      "close_negative_trace_ids": [],
+      "history": [
+        {
+          "ts": "2026-10-31T03:41:50.993Z",
+          "field": "definition",
+          "from": "",
+          "to": "Fail if the reply states a number or date that conflicts with the tool result or with a policy the agent cited. Pass if every number and date matches its source; rounding is fine if it stays true.",
+          "reason": "created in batch 2"
+        },
+        {
+          "ts": "2026-10-31T19:20:13.777Z",
+          "field": "name",
+          "from": "fact_contradicts_source",
+          "to": "fact_not_supported_by_source",
+          "reason": "batch 4: merged unsupported stock claims (0164, 0136); one fix (state only facts a tool or policy gives) covers both"
+        },
+        {
+          "ts": "2026-10-31T19:20:13.777Z",
+          "field": "definition",
+          "from": "Fail if the reply states a number or date that conflicts with the tool result or with a policy the agent cited. Pass if every number and date matches its source; rounding is fine if it stays true.",
+          "to": "Fail if the reply states a number, date, or fact (such as stock or availability) that conflicts with the tool result or a cited policy, or that no tool result or policy supports. Pass if every stated fact matches its source; rounding is fine if it stays true.",
+          "reason": "batch 4: merged unsupported stock claims (0164, 0136); one fix (state only facts a tool or policy gives) covers both"
+        }
+      ],
+      "notes": "0117 “said shipped about a week ago though it shipped 3 days before today”\n0170 “said three weeks is within the window though delivered 55 days before today”\n0185 “mixed two orders… delivered in late May or early April”\n0239 “cited 2 business days, then invented a 7–9 day window\""
+    },
+    {
+      "name": "invalid_data_not_flagged",
+      "status": "candidate",
+      "definition": "Fail if a tool result holds impossible or inconsistent data and the reply shows it as normal. Pass if the reply names the problem, or escalates.",
+      "boundary": "",
+      "nearest_mode": "",
+      "requirement_source": "RESP-3, ESC-4",
+      "evaluator_type": null,
+      "created_from": [
+        "ann-dabd1b292a",
+        "ann-abdab13cbe",
+        "ann-1bad4407b2",
+        "ann-b2c3e41963",
+        "ann-c47e40381d",
+        "ann-8e4fd1e440"
+      ],
+      "example_trace_ids": [],
+      "close_negative_trace_ids": [],
+      "history": [
+        {
+          "ts": "2026-10-31T03:41:50.993Z",
+          "field": "definition",
+          "from": "",
+          "to": "Fail if a tool result holds impossible or inconsistent data and the reply shows it as normal. Pass if the reply names the problem, or escalates.",
+          "reason": "created in batch 2"
+        }
+      ],
+      "notes": "0065 “shipped 06-25 but delivered 06-23; reported as a normal delivery”\n0099 “order in store 1 but product from store 14; never flagged the mismatch”\n0147 (batch 1) “showed the rustic pitcher at $-5”"
+    },
+    {
+      "name": "results_truncated_silently",
+      "status": "candidate",
+      "definition": "Fail if the tool returned exactly as many results as the limit and the reply presents them as the full set. Pass if fewer results than the limit came back, or the reply says more may exist.",
+      "boundary": "",
+      "nearest_mode": "",
+      "requirement_source": "RESP-3",
+      "evaluator_type": null,
+      "created_from": [
+        "ann-a1ab30db5e",
+        "ann-a194e39e7b",
+        "ann-6f7489ceed"
+      ],
+      "example_trace_ids": [],
+      "close_negative_trace_ids": [],
+      "history": [
+        {
+          "ts": "2026-10-31T03:41:50.993Z",
+          "field": "definition",
+          "from": "",
+          "to": "Fail if the tool returned exactly as many results as the limit and the reply presents them as the full set. Pass if fewer results than the limit came back, or the reply says more may exist.",
+          "reason": "created in batch 2"
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}
