@@ -30,6 +30,10 @@ class LangfuseLabelSink:
         self._client = client
 
     def write(self, trace_id: str, mode: str, label: int, comment: str | None) -> None:
+        # create_score and flush queue silently when the server is down, so
+        # check it is reachable first; auth_check raises on a refused connection.
+        if not self._client.auth_check():
+            raise RuntimeError("Langfuse auth check failed")
         self._client.create_score(
             name=mode,
             value=int(label),

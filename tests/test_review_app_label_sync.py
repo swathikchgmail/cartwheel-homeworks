@@ -16,10 +16,17 @@ from analysis.review_app.store import ReviewStore
 
 
 class FakeClient:
-    def __init__(self, fail: bool = False) -> None:
+    def __init__(self, fail: bool = False, reachable: bool = True) -> None:
         self.fail = fail
+        self.reachable = reachable
         self.scores: list[dict[str, Any]] = []
         self.flushed = 0
+
+    def auth_check(self) -> bool:
+        # The real client raises when the server is down and queues scores silently.
+        if not self.reachable:
+            raise ConnectionError("Connection refused")
+        return True
 
     def create_score(self, **kwargs: Any) -> None:
         if self.fail:
@@ -67,6 +74,23 @@ def test_failed_langfuse_write_still_saves_locally(store: ReviewStore) -> None:
 def test_failed_langfuse_write_reports_the_error(store: ReviewStore) -> None:
     result = save_label(store, LangfuseLabelSink(FakeClient(fail=True)), "unconfirmed_write", "t1", 1, "q")
     assert "langfuse down" in result["error"]
+
+
+def test_unreachable_langfuse_saves_locally_as_unsynced(store: ReviewStore) -> None:
+    result = save_label(store, LangfuseLabelSink(FakeClient(reachable=False)), "unconfirmed_write", "t1", 1, "q")
+    assert store.live_labels("unconfirmed_write")["t1"]["langfuse_synced"] is False
+
+
+def test_unreachable_langfuse_reports_the_error(store: ReviewStore) -> None:
+    result = save_label(store, LangfuseLabelSink(FakeClient(reachable=False)), "unconfirmed_write", "t1", 1, "q")
+    assert "Connection refused" in result["error"]
+
+
+def test_unreachable_langfuse_queues_no_score() -> None:
+    client = FakeClient(reachable=False)
+    with pytest.raises(ConnectionError):
+        LangfuseLabelSink(client).write("a" * 32, "unconfirmed_write", 1, None)
+    assert client.scores == []
 
 
 def test_offline_sink_saves_locally_as_unsynced(store: ReviewStore) -> None:
