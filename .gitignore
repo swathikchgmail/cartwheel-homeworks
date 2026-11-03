@@ -3,12 +3,20 @@
 
 # Secrets. Never commit keys.
 .env
+.env.*
+!.env.example
+
+# Personal notes and local-only files (never committed).
+notes/
+analysis/review_app/data/
 
 # Generated world data. Recreate with: uv run python -m seed.generate
 data/cartwheel.db
 
 # Local conversation state and scenario/replay run outputs.
 .sessions.db
+.sessions.db-shm
+.sessions.db-wal
 scenarios/results/
 replay/results/
 .harbor/
