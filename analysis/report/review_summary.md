@@ -121,5 +121,11 @@ To bridge this gap, synthetic scenarios targeting specific failure modes will be
 
 ---
 
-## Part C Note
-Part C (Raindrop Workshop) was designated as optional and was not completed; consequently, `workshop_notes.md` is omitted.
+## Part C: Raindrop Workshop
+- **Runs:** I ran 8 scenarios that are not in the review sample (10 turns: shopper, merchant and support roles, no refunds or cancellations) with local Raindrop Workshop instrumentation, and inspected each run.
+- **Setup:** Workshop showed each run's input and reply. The tool calls came from the matching Langfuse trace (same trace id), because Raindrop tool spans need a cloud write key and would export every agent span to Raindrop's cloud.
+- **Results:**
+  - The coding agent proposed 5 candidate failures: 2 accepted, 1 revised, 2 rejected.
+  - No new modes appeared. These runs are outside the 119-trace sample, so the taxonomy, labels and sample fractions above are unchanged.
+- **Example suggestion:** support-0227 said a store "doesn't have camping stoves in stock" after a keyword search for "camping stove" returned nothing; two "Camp Stove" products under $25 exist. I revised the suggestion from `bad_search_false_claim` to `fact_not_supported_by_source` (the query used the user's own words; the stock claim had no source). I noted the strict keyword matching as a tool issue.
+- Details are in `analysis/report/workshop_notes.md`.
