@@ -58,7 +58,7 @@ The coding agent proposed each decision with a reason; I reviewed them and accep
   * Offline replays of searches using `"stove"` or `"camp stove"` successfully return two matches: the Signature Camp Stove ($12.75) and the Heavy-Duty Camp Stove ($19.00).
 * **Root Cause of Search Failure:** The search engine requires every word in the query to match terms in the product title or description, and the term "camping" is absent from "Camp Stove."
 * **Explanation A (Agent Failure):** The response converts an empty keyword search into a definitive claim of zero stock. Since inventory levels are never explicitly returned by the tool, this aligns with `fact_not_supported_by_source`.
-* **Explanation B (Search Design Flaw):** The query faithfully reflected the user's phrasing ("a camping stove"), meaning the agent did not distort the input. Consequently, `bad_search_false_icon` may not apply, shifting the primary fault to strict keyword matching within `search_products`.
+* **Explanation B (Search Design Flaw):** The query faithfully reflected the user's phrasing ("a camping stove"), meaning the agent did not distort the input. Consequently, `bad_search_false_claim` may not apply, shifting the primary fault to strict keyword matching within `search_products`.
 * **Uncertainty:** Whether to categorize this as an agent error (A), a tool design constraint (B), or a combination of both. A product-level fix could involve instructing the agent to retry with shortened search terms before stating "none," or adjusting the search backend to use looser matching algorithms.
 
 ### Run `c51439f7…` (workshop-0196)
