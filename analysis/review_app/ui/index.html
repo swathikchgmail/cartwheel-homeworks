@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cartwheel review</title>
+  <link rel="stylesheet" href="/ui/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">Cartwheel review</span>
+    <nav class="tabs" aria-label="Views">
+      <button data-view="review" class="tab active">Review</button>
+      <button data-view="taxonomy" class="tab">Taxonomy</button>
+      <button data-view="label" class="tab">Label</button>
+      <button data-view="progress" class="tab">Progress</button>
+    </nav>
+    <span id="status" class="status" aria-live="polite"></span>
+  </header>
+
+  <main>
+    <section id="view-review" class="view review active">
+      <aside class="queue">
+        <label class="field-label" for="batch-filter">Queue</label>
+        <select id="batch-filter"></select>
+        <ol id="queue-list" class="queue-list"></ol>
+        <p class="hint">j / k next · prev &nbsp;·&nbsp; n note &nbsp;·&nbsp; 0 no failure &nbsp;·&nbsp; r reference</p>
+      </aside>
+      <article id="conversation" class="conversation"></article>
+      <aside id="notes" class="notes"></aside>
+    </section>
+
+    <section id="view-taxonomy" class="view taxonomy"></section>
+    <section id="view-label" class="view label"></section>
+    <section id="view-progress" class="view progress"></section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script type="module" src="/ui/main.js"></script>
+</body>
+</html>

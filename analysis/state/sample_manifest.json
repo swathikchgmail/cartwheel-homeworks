@@ -1,0 +1,941 @@
+{
+  "batches": [
+    {
+      "id": "batch-1",
+      "label": "Batch 1: uniform + cluster",
+      "method": "15+ traces uniform (seeded shuffle), then 15+ traces from 10 k-means clusters on conversation shape, nearest to centre first",
+      "final_check": false,
+      "seed": 2026102701,
+      "excluded": [
+        "38b6dc38b59744a780c1529b82d9b2e3",
+        "6f8edb95d79142c9b24d25dc4693f229",
+        "70c7e67ff31e4387b8b71dc603836c4d",
+        "b5046fcd46c1408390867c3e8b2bcc02",
+        "df4e4fd106334b748328b2d416fb47b6",
+        "ecf16061a1ed4a82b1b8579cd07ac292"
+      ],
+      "items": [
+        {
+          "session_id": "304941c571d449328666f4ca33732ebc",
+          "scenario_id": "support-0181",
+          "trace_ids": [
+            "899f068230b84f475e880c93c43d9e62"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "b31d8b5fabc74e38bd96877de94e10c1",
+          "scenario_id": "support-0017",
+          "trace_ids": [
+            "1f85cba86e8b3db5a5f76acb8528318d"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "d6d6ddc2cf8a43679fe29017b394cca9",
+          "scenario_id": "support-0007",
+          "trace_ids": [
+            "62d5a9fb2d34ab00919ee21fbc5ced84",
+            "9d088a71c4175df1c5dc2155ffd1c8ec",
+            "15562a1216a7a030e3f19303bb230801"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "afe0470a64f049d986297fbd9cd77a6d",
+          "scenario_id": "support-0169",
+          "trace_ids": [
+            "92a5a726081543dadda5785a903ed7fd"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "85d6f6d991314b9f880bae0d3d33fd0f",
+          "scenario_id": "support-0178",
+          "trace_ids": [
+            "84f09b7f7cec941319e4678ccb52a161"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "2bdd1ca4edea4f5f9d34f8c1e747e37a",
+          "scenario_id": "support-0147",
+          "trace_ids": [
+            "2e1a9da20c84d6346953ab1880c5427a"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "ae0724ba507a4ced805af894597c7912",
+          "scenario_id": "support-0083",
+          "trace_ids": [
+            "0370a60a8091bfdcfe810cce7a05d02b"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "e4ca529ab3de4aeb8a1ade3c944a94e1",
+          "scenario_id": "support-0229",
+          "trace_ids": [
+            "340965a559c86e5cf0081bd6167990d3"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "562d5b0a76a844e18d533e375649d6eb",
+          "scenario_id": "support-0103",
+          "trace_ids": [
+            "8d35ce5e218e80afb7333620c8e75c73"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "56e0c2a71fbd4425a058caef8ff917b9",
+          "scenario_id": "support-0035",
+          "trace_ids": [
+            "d4d3c7afff7cf074721c800e7915c6dd"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "16612a4e9fd3452bba0384d9ac02f158",
+          "scenario_id": "support-0211",
+          "trace_ids": [
+            "20da28c84b487e825c191f79835efd29",
+            "20fedbcc142a5760e14ec2c27d3c8c5c",
+            "98952888938a18f8ca3b6796b6a965eb",
+            "e673679946dbf750c7db37363e49f39e",
+            "5c72f3e2e891b67367f501cbb0141490"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "b518c4ffeccc49238be0ab029e1e16b1",
+          "scenario_id": "support-0225",
+          "trace_ids": [
+            "4731b008c787c18b0374c91384a048ab"
+          ],
+          "reason": "cluster 1 (44 conversations) representative"
+        },
+        {
+          "session_id": "9c0385f867144c3e8c7ae62aba8389b2",
+          "scenario_id": "support-0193",
+          "trace_ids": [
+            "d852c0d10e1d7b0da9fda789733205e1"
+          ],
+          "reason": "cluster 2 (39 conversations) representative"
+        },
+        {
+          "session_id": "7c68b31b18b84d75aa13f8f29cc746f0",
+          "scenario_id": "support-0235",
+          "trace_ids": [
+            "b89ef5b0d0e286775ea64949354ec6a2"
+          ],
+          "reason": "cluster 3 (37 conversations) representative"
+        },
+        {
+          "session_id": "06505bcd3c4e403b9a4387693fb18583",
+          "scenario_id": "support-0155",
+          "trace_ids": [
+            "fef514df9bc48d47745d27541adcb99a",
+            "2706fc66f1df1bf5fc70132c78a6d983"
+          ],
+          "reason": "cluster 4 (30 conversations) representative"
+        },
+        {
+          "session_id": "b9d3ea76dbe9444d915ea116e8ac8aca",
+          "scenario_id": "support-0040",
+          "trace_ids": [
+            "1665f33b22b22dbfc91a1c927e028fc0",
+            "ac1f12ce6ab702ef3b4978ed36f979c8",
+            "187123a22290858d50a9dabd091d3598"
+          ],
+          "reason": "cluster 5 (21 conversations) representative"
+        },
+        {
+          "session_id": "42187d3b72ce4560b316b946d10e54f5",
+          "scenario_id": "support-0249",
+          "trace_ids": [
+            "dd21e681ec4eefaf4579501600d8af02"
+          ],
+          "reason": "cluster 6 (15 conversations) representative"
+        },
+        {
+          "session_id": "2e2bad939d1741298c2242c14385525a",
+          "scenario_id": "support-0217",
+          "trace_ids": [
+            "39ddc613c71e06af3ebcc1a86715d2f8"
+          ],
+          "reason": "cluster 7 (14 conversations) representative"
+        },
+        {
+          "session_id": "e74de45a81a04fd9a72d036cee4a6ed8",
+          "scenario_id": "support-0006",
+          "trace_ids": [
+            "3b10bb0b6b3e1cb63d1f206e0eaafdd1"
+          ],
+          "reason": "cluster 8 (13 conversations) representative"
+        },
+        {
+          "session_id": "aba9e8fe887e48d48ce427f9c74ee069",
+          "scenario_id": "support-0047",
+          "trace_ids": [
+            "da68bda1b067484a360aa39afd679861",
+            "918d40cfe9ae782d2e3d15dbf62c9cd8",
+            "2a67a4cb6764164dbb557c0ac2397cd5",
+            "24e60bbe2dd36ec139ab5102a7870a84",
+            "3bac734e02563f931f7a456596d7aa49"
+          ],
+          "reason": "cluster 9 (12 conversations) representative"
+        }
+      ]
+    },
+    {
+      "id": "batch-2",
+      "label": "Batch 2: spread across role",
+      "method": "10+ traces per role (shopper, merchant, support), seeded shuffle within each role",
+      "final_check": false,
+      "seed": 2026102701,
+      "excluded": [
+        "06505bcd3c4e403b9a4387693fb18583",
+        "16612a4e9fd3452bba0384d9ac02f158",
+        "2bdd1ca4edea4f5f9d34f8c1e747e37a",
+        "2e2bad939d1741298c2242c14385525a",
+        "304941c571d449328666f4ca33732ebc",
+        "38b6dc38b59744a780c1529b82d9b2e3",
+        "42187d3b72ce4560b316b946d10e54f5",
+        "562d5b0a76a844e18d533e375649d6eb",
+        "56e0c2a71fbd4425a058caef8ff917b9",
+        "6f8edb95d79142c9b24d25dc4693f229",
+        "70c7e67ff31e4387b8b71dc603836c4d",
+        "7c68b31b18b84d75aa13f8f29cc746f0",
+        "85d6f6d991314b9f880bae0d3d33fd0f",
+        "9c0385f867144c3e8c7ae62aba8389b2",
+        "aba9e8fe887e48d48ce427f9c74ee069",
+        "ae0724ba507a4ced805af894597c7912",
+        "afe0470a64f049d986297fbd9cd77a6d",
+        "b31d8b5fabc74e38bd96877de94e10c1",
+        "b5046fcd46c1408390867c3e8b2bcc02",
+        "b518c4ffeccc49238be0ab029e1e16b1",
+        "b9d3ea76dbe9444d915ea116e8ac8aca",
+        "d6d6ddc2cf8a43679fe29017b394cca9",
+        "df4e4fd106334b748328b2d416fb47b6",
+        "e4ca529ab3de4aeb8a1ade3c944a94e1",
+        "e74de45a81a04fd9a72d036cee4a6ed8",
+        "ecf16061a1ed4a82b1b8579cd07ac292"
+      ],
+      "items": [
+        {
+          "session_id": "aa7b7c8a7ac44ac985a2cc81d5fb0762",
+          "scenario_id": "support-0095",
+          "trace_ids": [
+            "a8a3757055f6f4de65a3063d687cb27a"
+          ],
+          "reason": "role shopper"
+        },
+        {
+          "session_id": "b050af8bb937480895314f395e541cb5",
+          "scenario_id": "support-0210",
+          "trace_ids": [
+            "e8878ef9f25e9f2195f4d73e4d909ac1"
+          ],
+          "reason": "role shopper"
+        },
+        {
+          "session_id": "4fb132a67e644a33abf25b0e15dc91f5",
+          "scenario_id": "support-0156",
+          "trace_ids": [
+            "46ed252e0bc13eeda106bbb3825658f9"
+          ],
+          "reason": "role shopper"
+        },
+        {
+          "session_id": "779d16db94dd403eb117961ef382016e",
+          "scenario_id": "support-0029",
+          "trace_ids": [
+            "9fbc2c919549775c17edd01dc2e52691"
+          ],
+          "reason": "role shopper"
+        },
+        {
+          "session_id": "307cde4414994d8490f7218591274ecc",
+          "scenario_id": "support-0026",
+          "trace_ids": [
+            "1f8828c5b8eddcf745a1ef6c6cf7f71b"
+          ],
+          "reason": "role shopper"
+        },
+        {
+          "session_id": "b8ea9073881244538f831056e2552534",
+          "scenario_id": "support-0185",
+          "trace_ids": [
+            "15e0d8198c7bc5e1e2af6be08e2e9691"
+          ],
+          "reason": "role shopper"
+        },
+        {
+          "session_id": "e71058510a9142cca34df11abe35d7e3",
+          "scenario_id": "support-0117",
+          "trace_ids": [
+            "235fe823902c9dd086925e79168ee051",
+            "c04cfa8f694468c8993e421c0b2e0764"
+          ],
+          "reason": "role shopper"
+        },
+        {
+          "session_id": "ff35f1d973b74a539e3e62d5188c79cb",
+          "scenario_id": "support-0140",
+          "trace_ids": [
+            "167eb8de304004d6826744326f04df21",
+            "69803618cb74e183985cb142946a35b4"
+          ],
+          "reason": "role shopper"
+        },
+        {
+          "session_id": "4a49c0f05fdd479180372338a71c1cb7",
+          "scenario_id": "support-0206",
+          "trace_ids": [
+            "580668fe79afb1bf5ddb67c801816a1b"
+          ],
+          "reason": "role merchant"
+        },
+        {
+          "session_id": "bb4c614fd6544b5ea58c63d40f8af490",
+          "scenario_id": "support-0090",
+          "trace_ids": [
+            "6b765bb76667938ec6d4124d07f5b1c1"
+          ],
+          "reason": "role merchant"
+        },
+        {
+          "session_id": "98f7d07fcc2141f58592b74aa282976a",
+          "scenario_id": "support-0053",
+          "trace_ids": [
+            "cefe5337b8bdd7af61ef038ee9672e22"
+          ],
+          "reason": "role merchant"
+        },
+        {
+          "session_id": "1fb4d7f6641145a6bda96392b3a81610",
+          "scenario_id": "support-0212",
+          "trace_ids": [
+            "02882ce9ae05b95419f2a5d1a0b744aa"
+          ],
+          "reason": "role merchant"
+        },
+        {
+          "session_id": "fcb9148bbaff48329d3920e6adb77c9d",
+          "scenario_id": "support-0131",
+          "trace_ids": [
+            "15aba40fde94688fa7f7a811317e0ec5"
+          ],
+          "reason": "role merchant"
+        },
+        {
+          "session_id": "1479a0a7a76443e091284b841e7ab761",
+          "scenario_id": "support-0182",
+          "trace_ids": [
+            "802dbf3bd23cc7af7a486bc9c32fc2e2"
+          ],
+          "reason": "role merchant"
+        },
+        {
+          "session_id": "e66b3803735547b5b6f4f83ee22f2cc6",
+          "scenario_id": "support-0180",
+          "trace_ids": [
+            "373dba5611a277df8d37a1cead6fff93"
+          ],
+          "reason": "role merchant"
+        },
+        {
+          "session_id": "b40ec0c8dbef471b9610cafd647c0186",
+          "scenario_id": "support-0087",
+          "trace_ids": [
+            "2cb36c45148183ae008e78bb4c06598e"
+          ],
+          "reason": "role merchant"
+        },
+        {
+          "session_id": "0007debcf5e346ef812ff657c987fb82",
+          "scenario_id": "support-0065",
+          "trace_ids": [
+            "84d3fa2643a399398207642ada5c87dd"
+          ],
+          "reason": "role merchant"
+        },
+        {
+          "session_id": "6801ca8a3473460bbaabd4057e62954d",
+          "scenario_id": "support-0239",
+          "trace_ids": [
+            "71b4bdd6bc8a1734232354d90eaa5e06"
+          ],
+          "reason": "role merchant"
+        },
+        {
+          "session_id": "101b28a1dc0a4b71a17a5883c78454b7",
+          "scenario_id": "support-0099",
+          "trace_ids": [
+            "18336a5c018b0ff3a09ad8682d6693ca",
+            "12eeac96f87ba73cd6142bcbb04d2b46"
+          ],
+          "reason": "role support"
+        },
+        {
+          "session_id": "9aca953a89294afc8b32c337f357968e",
+          "scenario_id": "support-0101",
+          "trace_ids": [
+            "90dcc01dfb3d5eb03072ffa9a1f6ba8e"
+          ],
+          "reason": "role support"
+        },
+        {
+          "session_id": "4c52a8cb549b4713869f5a61c8253352",
+          "scenario_id": "support-0170",
+          "trace_ids": [
+            "aefaadd438bb475f49b64d50004e30a0",
+            "7205089e592251f936c66e3f47e7356c",
+            "c68f7d9530f415ab253369fb8b26fef6",
+            "c8adca5a1a7fa1cbdfaac26601267a25",
+            "58ba1721a88ced2b4aefd845fd02ceeb",
+            "f2235dd76905590c303cd787ab7379fe"
+          ],
+          "reason": "role support"
+        },
+        {
+          "session_id": "9498e61648dc473682ea793d67207228",
+          "scenario_id": "support-0160",
+          "trace_ids": [
+            "c5fce22c984564f029d6190034e4c4d9"
+          ],
+          "reason": "role support"
+        }
+      ]
+    },
+    {
+      "id": "batch-3",
+      "label": "Batch 3: depth searches",
+      "method": "deterministic retrieval signals on tool activity and intent (not outcomes); seeded draw within each signal",
+      "final_check": false,
+      "seed": 2026102701,
+      "excluded": [
+        "0007debcf5e346ef812ff657c987fb82",
+        "06505bcd3c4e403b9a4387693fb18583",
+        "101b28a1dc0a4b71a17a5883c78454b7",
+        "1479a0a7a76443e091284b841e7ab761",
+        "16612a4e9fd3452bba0384d9ac02f158",
+        "1fb4d7f6641145a6bda96392b3a81610",
+        "2bdd1ca4edea4f5f9d34f8c1e747e37a",
+        "2e2bad939d1741298c2242c14385525a",
+        "304941c571d449328666f4ca33732ebc",
+        "307cde4414994d8490f7218591274ecc",
+        "38b6dc38b59744a780c1529b82d9b2e3",
+        "42187d3b72ce4560b316b946d10e54f5",
+        "4a49c0f05fdd479180372338a71c1cb7",
+        "4c52a8cb549b4713869f5a61c8253352",
+        "4fb132a67e644a33abf25b0e15dc91f5",
+        "562d5b0a76a844e18d533e375649d6eb",
+        "56e0c2a71fbd4425a058caef8ff917b9",
+        "6801ca8a3473460bbaabd4057e62954d",
+        "6f8edb95d79142c9b24d25dc4693f229",
+        "70c7e67ff31e4387b8b71dc603836c4d",
+        "779d16db94dd403eb117961ef382016e",
+        "7c68b31b18b84d75aa13f8f29cc746f0",
+        "85d6f6d991314b9f880bae0d3d33fd0f",
+        "9498e61648dc473682ea793d67207228",
+        "98f7d07fcc2141f58592b74aa282976a",
+        "9aca953a89294afc8b32c337f357968e",
+        "9c0385f867144c3e8c7ae62aba8389b2",
+        "aa7b7c8a7ac44ac985a2cc81d5fb0762",
+        "aba9e8fe887e48d48ce427f9c74ee069",
+        "ae0724ba507a4ced805af894597c7912",
+        "afe0470a64f049d986297fbd9cd77a6d",
+        "b050af8bb937480895314f395e541cb5",
+        "b31d8b5fabc74e38bd96877de94e10c1",
+        "b40ec0c8dbef471b9610cafd647c0186",
+        "b5046fcd46c1408390867c3e8b2bcc02",
+        "b518c4ffeccc49238be0ab029e1e16b1",
+        "b8ea9073881244538f831056e2552534",
+        "b9d3ea76dbe9444d915ea116e8ac8aca",
+        "bb4c614fd6544b5ea58c63d40f8af490",
+        "d6d6ddc2cf8a43679fe29017b394cca9",
+        "df4e4fd106334b748328b2d416fb47b6",
+        "e4ca529ab3de4aeb8a1ade3c944a94e1",
+        "e66b3803735547b5b6f4f83ee22f2cc6",
+        "e71058510a9142cca34df11abe35d7e3",
+        "e74de45a81a04fd9a72d036cee4a6ed8",
+        "ecf16061a1ed4a82b1b8579cd07ac292",
+        "fcb9148bbaff48329d3920e6adb77c9d",
+        "ff35f1d973b74a539e3e62d5188c79cb"
+      ],
+      "items": [
+        {
+          "session_id": "384ae05ece8f46d293b27835b03d9650",
+          "scenario_id": "support-0242",
+          "trace_ids": [
+            "d4dbf23a3f456bc6dc29cbb5c0f09b7e",
+            "3bc2903581b66c39d1e5d73884847826",
+            "f520febf95eaa95ebc67d14a06797cbb",
+            "159ba3d7fdb6761a8a51411e2d5109fa",
+            "0a833520d321a11d359b26b96bb17fbb"
+          ],
+          "reason": "search results_truncated_silently: count == limit"
+        },
+        {
+          "session_id": "e157e242d09c487c9386131227e7bcb7",
+          "scenario_id": "support-0013",
+          "trace_ids": [
+            "8bfae7e16ea17fdb4da23052ed5c53a3"
+          ],
+          "reason": "search results_truncated_silently: count == limit"
+        },
+        {
+          "session_id": "fb07d475108746b886b37a46ededfd6a",
+          "scenario_id": "support-0111",
+          "trace_ids": [
+            "8e2d8ac80e126f1f466d82ec8c95886e"
+          ],
+          "reason": "search results_truncated_silently: count == limit"
+        },
+        {
+          "session_id": "4c3dc6f72af3494e8428f982b2362759",
+          "scenario_id": "support-0073",
+          "trace_ids": [
+            "5a50e3ad00c77a82c679288932d5cac3"
+          ],
+          "reason": "search store_policy_ignored round 1: override store on a return question"
+        },
+        {
+          "session_id": "9b2ccc1d6aba49ac9768bc1bd3776e46",
+          "scenario_id": "support-0246",
+          "trace_ids": [
+            "775ba8c0f738307827904a7ec144ba78"
+          ],
+          "reason": "search store_policy_ignored round 1: override store on a return question"
+        },
+        {
+          "session_id": "cd54bc82607a472ab4523e0c5b5c4c20",
+          "scenario_id": "support-0221",
+          "trace_ids": [
+            "16058e0d9d9ae508779767441c312c7e"
+          ],
+          "reason": "search store_policy_ignored round 1: override store on a return question"
+        },
+        {
+          "session_id": "74d82963944a4cbbaa472fec5336381e",
+          "scenario_id": "support-0080",
+          "trace_ids": [
+            "fa92f02fef4bbae58baaaed04b882072"
+          ],
+          "reason": "search store_policy_ignored round 1: override store on a return question"
+        },
+        {
+          "session_id": "464f035fa79a452c876a8e61a8bf12b8",
+          "scenario_id": "support-0233",
+          "trace_ids": [
+            "707694012c9cbdff4f68e91fd3a4480d"
+          ],
+          "reason": "search store_policy_ignored round 1: override store on a return question"
+        },
+        {
+          "session_id": "4111107a79d741d9b8c3aa088cebfd63",
+          "scenario_id": "support-0015",
+          "trace_ids": [
+            "9c79fc66ce3731e86a2eebd23bd9f849"
+          ],
+          "reason": "search store_policy_ignored round 1: override store on a return question"
+        },
+        {
+          "session_id": "f36ee736e5d2456284b96934cf48a0dc",
+          "scenario_id": "support-0118",
+          "trace_ids": [
+            "531a39757171220ee77c015f00a9e6f8"
+          ],
+          "reason": "search store_policy_ignored round 1: override store on a return question"
+        },
+        {
+          "session_id": "bbe079ff6beb4e369532638dd99e34f7",
+          "scenario_id": "support-0142",
+          "trace_ids": [
+            "7561f5eae521200282ee2a33064290ed"
+          ],
+          "reason": "search store_policy_ignored round 1: override store on a return question"
+        },
+        {
+          "session_id": "69ff3a3dee4544c39e573872c821d8cc",
+          "scenario_id": "support-0058",
+          "trace_ids": [
+            "e71443b2609e15da2ca080d38ca260f4",
+            "01135bd2b47656504e98ac68f0f4a48f",
+            "4394c191835fff55049bc4dad9c792e4",
+            "f6970a29106dacb1797bc4ef3d153931"
+          ],
+          "reason": "search invalid_data_not_flagged: impossible value in a tool result"
+        },
+        {
+          "session_id": "a82efe08fb2e41fa81351e708505280a",
+          "scenario_id": "support-0125",
+          "trace_ids": [
+            "b12cf143e983aa541dabe992e03a2272",
+            "296b3d2e1031728c28f91464e2aaf4b8"
+          ],
+          "reason": "search results_truncated_silently close negative: count < limit"
+        },
+        {
+          "session_id": "7c4f93ee932c4b5cbba5066e358f3f74",
+          "scenario_id": "support-0056",
+          "trace_ids": [
+            "5427bb316d4bf08c991ec9e7e54d8c03",
+            "3298f3900d7f956b981994b31caba973"
+          ],
+          "reason": "search store_policy_ignored round 2: order in question is from an override store"
+        },
+        {
+          "session_id": "66ca453ccbee420c865011bd4c830d86",
+          "scenario_id": "support-0236",
+          "trace_ids": [
+            "f05914471b028ad9689a754f9995c1b6",
+            "7699bf1a8a16652fd7aff6508329f17c"
+          ],
+          "reason": "search store_policy_ignored round 2: order in question is from an override store"
+        }
+      ]
+    },
+    {
+      "id": "batch-4",
+      "label": "Batch 4: final uniform check",
+      "method": "15+ traces uniform (seeded shuffle) from conversations not in any earlier batch",
+      "final_check": true,
+      "seed": 2026102701,
+      "excluded": [
+        "0007debcf5e346ef812ff657c987fb82",
+        "06505bcd3c4e403b9a4387693fb18583",
+        "101b28a1dc0a4b71a17a5883c78454b7",
+        "1479a0a7a76443e091284b841e7ab761",
+        "16612a4e9fd3452bba0384d9ac02f158",
+        "1fb4d7f6641145a6bda96392b3a81610",
+        "2bdd1ca4edea4f5f9d34f8c1e747e37a",
+        "2e2bad939d1741298c2242c14385525a",
+        "304941c571d449328666f4ca33732ebc",
+        "307cde4414994d8490f7218591274ecc",
+        "384ae05ece8f46d293b27835b03d9650",
+        "38b6dc38b59744a780c1529b82d9b2e3",
+        "4111107a79d741d9b8c3aa088cebfd63",
+        "42187d3b72ce4560b316b946d10e54f5",
+        "464f035fa79a452c876a8e61a8bf12b8",
+        "4a49c0f05fdd479180372338a71c1cb7",
+        "4c3dc6f72af3494e8428f982b2362759",
+        "4c52a8cb549b4713869f5a61c8253352",
+        "4fb132a67e644a33abf25b0e15dc91f5",
+        "562d5b0a76a844e18d533e375649d6eb",
+        "56e0c2a71fbd4425a058caef8ff917b9",
+        "66ca453ccbee420c865011bd4c830d86",
+        "6801ca8a3473460bbaabd4057e62954d",
+        "69ff3a3dee4544c39e573872c821d8cc",
+        "6f8edb95d79142c9b24d25dc4693f229",
+        "70c7e67ff31e4387b8b71dc603836c4d",
+        "74d82963944a4cbbaa472fec5336381e",
+        "779d16db94dd403eb117961ef382016e",
+        "7c4f93ee932c4b5cbba5066e358f3f74",
+        "7c68b31b18b84d75aa13f8f29cc746f0",
+        "85d6f6d991314b9f880bae0d3d33fd0f",
+        "9498e61648dc473682ea793d67207228",
+        "98f7d07fcc2141f58592b74aa282976a",
+        "9aca953a89294afc8b32c337f357968e",
+        "9b2ccc1d6aba49ac9768bc1bd3776e46",
+        "9c0385f867144c3e8c7ae62aba8389b2",
+        "a82efe08fb2e41fa81351e708505280a",
+        "aa7b7c8a7ac44ac985a2cc81d5fb0762",
+        "aba9e8fe887e48d48ce427f9c74ee069",
+        "ae0724ba507a4ced805af894597c7912",
+        "afe0470a64f049d986297fbd9cd77a6d",
+        "b050af8bb937480895314f395e541cb5",
+        "b31d8b5fabc74e38bd96877de94e10c1",
+        "b40ec0c8dbef471b9610cafd647c0186",
+        "b5046fcd46c1408390867c3e8b2bcc02",
+        "b518c4ffeccc49238be0ab029e1e16b1",
+        "b8ea9073881244538f831056e2552534",
+        "b9d3ea76dbe9444d915ea116e8ac8aca",
+        "bb4c614fd6544b5ea58c63d40f8af490",
+        "bbe079ff6beb4e369532638dd99e34f7",
+        "cd54bc82607a472ab4523e0c5b5c4c20",
+        "d6d6ddc2cf8a43679fe29017b394cca9",
+        "df4e4fd106334b748328b2d416fb47b6",
+        "e157e242d09c487c9386131227e7bcb7",
+        "e4ca529ab3de4aeb8a1ade3c944a94e1",
+        "e66b3803735547b5b6f4f83ee22f2cc6",
+        "e71058510a9142cca34df11abe35d7e3",
+        "e74de45a81a04fd9a72d036cee4a6ed8",
+        "ecf16061a1ed4a82b1b8579cd07ac292",
+        "f36ee736e5d2456284b96934cf48a0dc",
+        "fb07d475108746b886b37a46ededfd6a",
+        "fcb9148bbaff48329d3920e6adb77c9d",
+        "ff35f1d973b74a539e3e62d5188c79cb"
+      ],
+      "items": [
+        {
+          "session_id": "380ca26da5754d7fa9717750bc865644",
+          "scenario_id": "support-0220",
+          "trace_ids": [
+            "8701a8c307b6a2167654013da916ab89",
+            "94ee6063667de2715c7f9045c0aae5d4"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "b2a8de222d8c40ca95df26da84870e20",
+          "scenario_id": "support-0164",
+          "trace_ids": [
+            "70d90def47ffc2a4cdc8521a96fe1e92"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "8027f316793340df85bc831d1bb403ce",
+          "scenario_id": "support-0081",
+          "trace_ids": [
+            "d11c8a99ad8207b569613966e41f6a62",
+            "3d8858641f6eea81a7d5fea3eb9b606d"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "1b9303388c3845c3b04faf68c8023e8b",
+          "scenario_id": "support-0136",
+          "trace_ids": [
+            "fce135fb888b6ac681c0c0e0497a0018",
+            "b2c91e49416e4f444ffc0ca7681c7ddf"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "4cdead434c044dceb9c7b04dd51b03a6",
+          "scenario_id": "support-0250",
+          "trace_ids": [
+            "cd48eca3414359ca89ee4e70c4d5c8ae",
+            "56dadc925d9e54dbe11a4caffe142b6d"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "678d5dd866564de29d00b145add9b243",
+          "scenario_id": "support-0191",
+          "trace_ids": [
+            "faea27775a610bc2312bda1703d194d5"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "652626c098c64c62b0b6f415f5750391",
+          "scenario_id": "support-0240",
+          "trace_ids": [
+            "dbff33212aca31ee50824b6fd9c020dc"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "bef2429f06854c8cbbee5acda235e53e",
+          "scenario_id": "support-0203",
+          "trace_ids": [
+            "fbfc0ac287892eb63935d9389dab25a0"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "20c05aaf02bb4a0bbc76333f0b729acf",
+          "scenario_id": "support-0179",
+          "trace_ids": [
+            "29d19203fe065016e70dd6c56b37967d"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "39705a4affc640eca1eca92de4dc3e9c",
+          "scenario_id": "support-0092",
+          "trace_ids": [
+            "f38bde2d694a3c76ab9326ae53608b9b"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "234f46fb63dd49c49f3197b63a5b8b5a",
+          "scenario_id": "support-0192",
+          "trace_ids": [
+            "3df02f46fd2123a539b468b551574f3f"
+          ],
+          "reason": "uniform pick"
+        }
+      ]
+    },
+    {
+      "id": "batch-5",
+      "label": "Batch 5: final uniform check",
+      "method": "15+ traces uniform (seeded shuffle) from conversations not in any earlier batch",
+      "final_check": true,
+      "seed": 2026102701,
+      "excluded": [
+        "0007debcf5e346ef812ff657c987fb82",
+        "06505bcd3c4e403b9a4387693fb18583",
+        "101b28a1dc0a4b71a17a5883c78454b7",
+        "1479a0a7a76443e091284b841e7ab761",
+        "16612a4e9fd3452bba0384d9ac02f158",
+        "1b9303388c3845c3b04faf68c8023e8b",
+        "1fb4d7f6641145a6bda96392b3a81610",
+        "20c05aaf02bb4a0bbc76333f0b729acf",
+        "234f46fb63dd49c49f3197b63a5b8b5a",
+        "2bdd1ca4edea4f5f9d34f8c1e747e37a",
+        "2e2bad939d1741298c2242c14385525a",
+        "304941c571d449328666f4ca33732ebc",
+        "307cde4414994d8490f7218591274ecc",
+        "380ca26da5754d7fa9717750bc865644",
+        "384ae05ece8f46d293b27835b03d9650",
+        "38b6dc38b59744a780c1529b82d9b2e3",
+        "39705a4affc640eca1eca92de4dc3e9c",
+        "4111107a79d741d9b8c3aa088cebfd63",
+        "42187d3b72ce4560b316b946d10e54f5",
+        "464f035fa79a452c876a8e61a8bf12b8",
+        "4a49c0f05fdd479180372338a71c1cb7",
+        "4c3dc6f72af3494e8428f982b2362759",
+        "4c52a8cb549b4713869f5a61c8253352",
+        "4cdead434c044dceb9c7b04dd51b03a6",
+        "4fb132a67e644a33abf25b0e15dc91f5",
+        "562d5b0a76a844e18d533e375649d6eb",
+        "56e0c2a71fbd4425a058caef8ff917b9",
+        "652626c098c64c62b0b6f415f5750391",
+        "66ca453ccbee420c865011bd4c830d86",
+        "678d5dd866564de29d00b145add9b243",
+        "6801ca8a3473460bbaabd4057e62954d",
+        "69ff3a3dee4544c39e573872c821d8cc",
+        "6f8edb95d79142c9b24d25dc4693f229",
+        "70c7e67ff31e4387b8b71dc603836c4d",
+        "74d82963944a4cbbaa472fec5336381e",
+        "779d16db94dd403eb117961ef382016e",
+        "7c4f93ee932c4b5cbba5066e358f3f74",
+        "7c68b31b18b84d75aa13f8f29cc746f0",
+        "8027f316793340df85bc831d1bb403ce",
+        "85d6f6d991314b9f880bae0d3d33fd0f",
+        "9498e61648dc473682ea793d67207228",
+        "98f7d07fcc2141f58592b74aa282976a",
+        "9aca953a89294afc8b32c337f357968e",
+        "9b2ccc1d6aba49ac9768bc1bd3776e46",
+        "9c0385f867144c3e8c7ae62aba8389b2",
+        "a82efe08fb2e41fa81351e708505280a",
+        "aa7b7c8a7ac44ac985a2cc81d5fb0762",
+        "aba9e8fe887e48d48ce427f9c74ee069",
+        "ae0724ba507a4ced805af894597c7912",
+        "afe0470a64f049d986297fbd9cd77a6d",
+        "b050af8bb937480895314f395e541cb5",
+        "b2a8de222d8c40ca95df26da84870e20",
+        "b31d8b5fabc74e38bd96877de94e10c1",
+        "b40ec0c8dbef471b9610cafd647c0186",
+        "b5046fcd46c1408390867c3e8b2bcc02",
+        "b518c4ffeccc49238be0ab029e1e16b1",
+        "b8ea9073881244538f831056e2552534",
+        "b9d3ea76dbe9444d915ea116e8ac8aca",
+        "bb4c614fd6544b5ea58c63d40f8af490",
+        "bbe079ff6beb4e369532638dd99e34f7",
+        "bef2429f06854c8cbbee5acda235e53e",
+        "cd54bc82607a472ab4523e0c5b5c4c20",
+        "d6d6ddc2cf8a43679fe29017b394cca9",
+        "df4e4fd106334b748328b2d416fb47b6",
+        "e157e242d09c487c9386131227e7bcb7",
+        "e4ca529ab3de4aeb8a1ade3c944a94e1",
+        "e66b3803735547b5b6f4f83ee22f2cc6",
+        "e71058510a9142cca34df11abe35d7e3",
+        "e74de45a81a04fd9a72d036cee4a6ed8",
+        "ecf16061a1ed4a82b1b8579cd07ac292",
+        "f36ee736e5d2456284b96934cf48a0dc",
+        "fb07d475108746b886b37a46ededfd6a",
+        "fcb9148bbaff48329d3920e6adb77c9d",
+        "ff35f1d973b74a539e3e62d5188c79cb"
+      ],
+      "items": [
+        {
+          "session_id": "739b143c106643909079bc6c83b9490a",
+          "scenario_id": "support-0158",
+          "trace_ids": [
+            "66f647d17a40c5d36136d8dfdbf97d22",
+            "918054c3b68cb33f022b393a14e017e0"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "68e4b0a439394d2b92ed4b6bbefc1d6d",
+          "scenario_id": "support-0230",
+          "trace_ids": [
+            "9a23ac43df9427b369d6c43cecd903b7"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "c4210895116a4d2ea7002fdb57d1d562",
+          "scenario_id": "support-0226",
+          "trace_ids": [
+            "3a15325ce84736cdce5af1ce3136bbb7"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "b6d8c7751aa54a938ad2ca0c738f2aec",
+          "scenario_id": "support-0151",
+          "trace_ids": [
+            "92a3bb50a36bdd2be025a44c15f1493c",
+            "ae2912b26d1ec5dbba2a78b65022cba8"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "1c75a19e6d12415a9923af36c117ccba",
+          "scenario_id": "support-0057",
+          "trace_ids": [
+            "cc5329cd026a36f2727c8e36fca3d09a"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "18956d1901214dcb843e383f58b78929",
+          "scenario_id": "support-0127",
+          "trace_ids": [
+            "36e6cacb72b48ca593fd66519c02bc25",
+            "206769962412ed43d48b0a49e71cf1af"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "57b23be865814de3ac8f9a5a38457e8c",
+          "scenario_id": "support-0011",
+          "trace_ids": [
+            "1c7e63fe50595e44c31b0f7271ccdda6",
+            "2c98766609330a88403c3c194de77e7b"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "fd715e65e1c4491fa8f12bac2ec3668d",
+          "scenario_id": "support-0144",
+          "trace_ids": [
+            "37945254a3e2e6c9e81fcefe0174ffd1"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "2310b72b97c042618a9c4df1fb4a12a9",
+          "scenario_id": "support-0184",
+          "trace_ids": [
+            "c32f48ac3dc4f5e1849419fc65347545"
+          ],
+          "reason": "uniform pick"
+        },
+        {
+          "session_id": "83539b51bcd0481e9151396e69851e68",
+          "scenario_id": "support-0114",
+          "trace_ids": [
+            "e53e5a959832917bf5ccceb0b1f93e22",
+            "9e98d0d64333b396fa55cc1e2efc9068",
+            "5431bee30b2eff82bb796eafb1ac2d77"
+          ],
+          "reason": "uniform pick"
+        }
+      ]
+    }
+  ]
+}

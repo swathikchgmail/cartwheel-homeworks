@@ -42,6 +42,7 @@ from agent.agent import build_agent, prompt_version
 from agent.auth import ROLES, AuthContext
 from agent.config import REPO_ROOT, db_path
 from observability.instrument import load_env, setup_tracing
+from observability.raindrop_workshop import finish_turn, workshop_turn
 
 MAX_TURNS = 12  # cap runaway loops; keeps conversations bounded
 SESSIONS_DB = REPO_ROOT / ".sessions.db"
@@ -202,10 +203,15 @@ async def post_message(
                     "gen_ai.input.messages",
                     json.dumps([{"role": "user", "parts": [{"type": "text", "content": body.message}]}]),
                 )
-        result = await Runner.run(
-            agent, body.message, session=session, context=ctx, max_turns=MAX_TURNS
-        )
-        reply = str(result.final_output)
+        workshop_props = {"role": ctx.role, "scenario_id": body.scenario_id, "prompt_version": version}
+        with workshop_turn(
+            user_id=str(ctx.user_id), session_id=session_id, message=body.message, properties=workshop_props
+        ) as interaction:
+            result = await Runner.run(
+                agent, body.message, session=session, context=ctx, max_turns=MAX_TURNS
+            )
+            reply = str(result.final_output)
+            finish_turn(interaction, reply)
         if span.is_recording() and capture:
             span.set_attribute(
                 "gen_ai.output.messages",
