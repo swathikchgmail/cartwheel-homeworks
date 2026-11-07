@@ -936,6 +936,382 @@
           "reason": "uniform pick"
         }
       ]
+    },
+    {
+      "id": "hw5-1",
+      "label": "HW5 batch 1: policy_not_cited candidates",
+      "method": "next_to_label(mode='policy_not_cited', strategy='enrich', k=60) on traces/support_traces.json; first 40 unreviewed conversations",
+      "final_check": false,
+      "items": [
+        {
+          "session_id": "8f92de4e054541259b466a53bd903b00",
+          "scenario_id": "support-0161",
+          "trace_ids": [
+            "38dbdd39ae372b69c73539c6adddf1a1"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "e73c351edc3b4c5ea14bde3d78b0a127",
+          "scenario_id": "support-0201",
+          "trace_ids": [
+            "5465e133e19779d6ed9aecd185f87a47"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "75595642555546d6a02ee53cfef047b9",
+          "scenario_id": "support-0177",
+          "trace_ids": [
+            "f929d0a584723110bc6005068218978b"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "6aadfa67073c4a1c9a69d35a228b8626",
+          "scenario_id": "support-0023",
+          "trace_ids": [
+            "5307a267fcc12831ff230a96ed9873be",
+            "c928b717bca07ccbcae17c2e9ea89590",
+            "83dcc3090698932e507c60dfde955da2",
+            "333156c2ec76d770b33d851c616abe1c"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "7fa6138bd08d432e812c9e4802641e03",
+          "scenario_id": "support-0234",
+          "trace_ids": [
+            "f213bb58b4f90bfdd706fc0f3f5be150",
+            "c1c2efcd7343d9590e04fd079ed80d97",
+            "160780ccd7774e6dbd77a2ae8951b091",
+            "2e18f9ba765b945335810e6cf524b51b",
+            "370a68834965316dd58322470f74083a",
+            "d8ec91d46949f0e5611c0b6c70ab5486"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "28e357391da24d19a51f6f719805b80c",
+          "scenario_id": "support-0012",
+          "trace_ids": [
+            "fc8302c25cb4582bd63548a13995e483",
+            "ff700b0c8843577c472c1b6238190da6"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "e788bed8da0046ba95c4d5896a2c867f",
+          "scenario_id": "support-0054",
+          "trace_ids": [
+            "e20b4df99d74f8a8ff617e64b1e41a89"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "2223adbc262c4cee9270d990abfdfd40",
+          "scenario_id": "support-0010",
+          "trace_ids": [
+            "3f4a95b01d7ab735af83909b4ddc26d2"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "c8709468638a458ab8aeaae7fdb7d7f4",
+          "scenario_id": "support-0163",
+          "trace_ids": [
+            "f3ad5c06b0c8b0cf26c57aab1794edcc",
+            "4348ddeb2b9dec4b174ddad669396b71",
+            "90d6732d40fa3ee78de899d1dde4084d",
+            "f6632c0f17168dc10e33a8fdd45083bb"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "a100b6d6410748c88510dbf547661a9a",
+          "scenario_id": "support-0075",
+          "trace_ids": [
+            "278d48c1c4924b953c4d2d4d65ec3f3e"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "3ed5836d1baa4c619afda8f47d345f93",
+          "scenario_id": "support-0062",
+          "trace_ids": [
+            "f62186dbf8adb78f5aca103ff2d7cd5a",
+            "60faf9f44113a88031b721fd0fcb3d63",
+            "ac48a4956d4d55ea26d1dbb34d77670b",
+            "b0794b4bd7405c95a7e4d7a715c25018",
+            "40ed8b4d6d654fefef05826c7c8680ea"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "8fffd12bcec2467da1ad8798d0573cd0",
+          "scenario_id": "support-0027",
+          "trace_ids": [
+            "ce8368fa2184ce835416def160d692c1",
+            "caba0b68a1ae268b686cc40778657d0b"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "ecf16061a1ed4a82b1b8579cd07ac292",
+          "scenario_id": "support-0153",
+          "trace_ids": [
+            "063ab361175559caaf96f6d93efb4ad5",
+            "8363f39755f5604e64e78c8460ab60b9",
+            "e6bd51bd7cc8b0acd9182fbae03805e2",
+            "0918d1636564093f3c6a8a7e64ba230c",
+            "b1ae7f1d90b9e680b1438668f12fcc00"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "f98122319e584fb4a57cf87d5045b805",
+          "scenario_id": "support-0110",
+          "trace_ids": [
+            "9b8670cd4d54bcf040f4b049a201e35e",
+            "e21108202afa20e4ce268d60f1f12e07"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "b589b2c88f0a48c7931e16b53159c6b8",
+          "scenario_id": "support-0112",
+          "trace_ids": [
+            "0c3a740016832c3614feb89b991a8e0a",
+            "10af5ee0aea71c7bc6e5aae96bbc9453"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "f9efc35080ec462281a8197da3a3d768",
+          "scenario_id": "support-0209",
+          "trace_ids": [
+            "cf8ac771bdc68abfd9432d68ff7b915b",
+            "4ab031267b93ddadb2d34e5b0faad6af",
+            "dc244d5b6fd994464a2bb0336d5389a8",
+            "cd1a5228f96944544f20e8bd9d3de57a"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "2f8ceb1a739549698662eea1292efc82",
+          "scenario_id": "support-0135",
+          "trace_ids": [
+            "bca869eacb7fe8bc3df69016d884a609",
+            "c28e31cf51cc5a2e225fca4efa46b497"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "4e221ed13b4a4c3481f042369614fcfc",
+          "scenario_id": "support-0137",
+          "trace_ids": [
+            "387137d93173afd2fff64766955cf483",
+            "45b9a355dd6311a6105aed612f6ea180",
+            "0c30c674004c6201955853e4ccfc70be",
+            "b26223b47c51a17cc24c023cc9b9603e",
+            "692b0da1f457fd0c599102e9a803d120",
+            "f50898c5d80aa63e5a18b430292e4b74"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "5157d6eda1204955aad85ee024adc7f4",
+          "scenario_id": "support-0084",
+          "trace_ids": [
+            "67a5ebb11b11c3cfcbd3e3b66365889e",
+            "2780ae420d7972e0459617a038772608"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "69532dcc166e4112ab2aec348e0c9b90",
+          "scenario_id": "support-0091",
+          "trace_ids": [
+            "84124b1b724ef02fc8ec3c5e73055006",
+            "2c93626bc84ba335fcca993fb740d7d2",
+            "bea80e149fc8a5404fa5efe8fd43e15b",
+            "c0e7a73eeabe0909ed44a75a2f8ed8d0"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "0c45d2916a4c46be8327b23b32861e18",
+          "scenario_id": "support-0041",
+          "trace_ids": [
+            "5250d8de6cdf82ce96bea9cd9f915c28",
+            "af7c9307d304b0176a097335f55733d8"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "3956df7725c441f0b11c92dc69a017c3",
+          "scenario_id": "support-0238",
+          "trace_ids": [
+            "385d627ec9b2326bfdb93375ed3f2f5b",
+            "872765150895427545a4d78a9bb5dff5"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "4846e0dc8c7a4c6f9e10621677ecacaf",
+          "scenario_id": "support-0003",
+          "trace_ids": [
+            "0c74ccb8c794200192c4d4f2bc7522a6",
+            "2d92c5197afa148cac94ac67e8506556"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "bcac1556b5ff42cb9e2eb8ef9b4ed7be",
+          "scenario_id": "support-0202",
+          "trace_ids": [
+            "1fcadc06651e08d8ead7d8045cba2b5e"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "585963de880741759732e81954b98bfc",
+          "scenario_id": "support-0245",
+          "trace_ids": [
+            "d4f6ea44c048db9cfb4619ad91bf9687"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "17449f8bc8444e91a82226c4b92dca2a",
+          "scenario_id": "support-0022",
+          "trace_ids": [
+            "77c8ce74ea9aa91cefb15672782bd591"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "e52c847e86944f3ca395ae6a4c769600",
+          "scenario_id": "support-0004",
+          "trace_ids": [
+            "5aead1d480fb9ab80ca4a09f8c61b40c"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "5d904edc782d4781bf32ba44b75f3ec0",
+          "scenario_id": "support-0174",
+          "trace_ids": [
+            "6784c863821cce23f3479bfc797cf99e"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "73b81eb6bdc746508eefcab061636aec",
+          "scenario_id": "support-0172",
+          "trace_ids": [
+            "8cc8f782bfc95cafeb3e57b4986e2793",
+            "73735ede8c2dfbc5bfb3b044b950d2d3"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "b74b9ab11e45415ea160e71208d992fd",
+          "scenario_id": "support-0194",
+          "trace_ids": [
+            "8daa41d822e14e822b756501060d67f8",
+            "a7f3e4ee84a46c1abc331ec5f0061563"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "e98f0448f4844b119ba6ad7f9c8398ff",
+          "scenario_id": "support-0085",
+          "trace_ids": [
+            "77c524545ae3d99ec639924ab089a7ff"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "9a1fd64683ab4511a12470e5d2384a18",
+          "scenario_id": "support-0008",
+          "trace_ids": [
+            "125a6bdd192564c1ed28ef4a4904d9ca",
+            "ca66f9bac219c7aa72ed155802cec654",
+            "5d4913b1f036b93cb60009f255e60a2b"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "a136c8ecc8374c8ea147edc0dfa04a7b",
+          "scenario_id": "support-0214",
+          "trace_ids": [
+            "944c8a08351d11b17abd41d965964f30",
+            "0798f1baffab6dfc9a3a5b1c0f3fc25e"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "a2cefe4122be46d882f0d361c39e5132",
+          "scenario_id": "support-0043",
+          "trace_ids": [
+            "30e188d5b7dafbff1a4f33dbec11de95"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "181ace510b184158852bae5b7d0be5d5",
+          "scenario_id": "support-0064",
+          "trace_ids": [
+            "3f480598fb2867f522570afbb17f6ca7"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "a8dbe03005c34be2ae2d0243d3714c86",
+          "scenario_id": "support-0222",
+          "trace_ids": [
+            "671ba91e4eec5e42e93c24cc56c9291f"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "068901912736442da2eab32c19ab0470",
+          "scenario_id": "support-0001",
+          "trace_ids": [
+            "9a5543c0375289e000e8dff452ee9a07"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "f9689cbfbc274babb929a3457bc4b89b",
+          "scenario_id": "support-0070",
+          "trace_ids": [
+            "eff6f9a2570f32c63936f408e011eef8",
+            "ead7c5b35d362b85d838451875455112",
+            "907a1d300f06f522625da397cd5d3de4",
+            "adeb1a3e7fba13f4d729e74f91581461"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "cc1e55fc988946eb992493e1d2627a06",
+          "scenario_id": "support-0030",
+          "trace_ids": [
+            "fd03933448c983dbf53f1e8bc3b1872f"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        },
+        {
+          "session_id": "4de3f8b3485248c7b5463a86a6316329",
+          "scenario_id": "support-0215",
+          "trace_ids": [
+            "f730cbb079f545251555b2d0e2928d76",
+            "3f1df7862ab7ca4229edad51eab6c3d5"
+          ],
+          "reason": "hw5 enrich: semantic neighbor of a confirmed policy_not_cited failure"
+        }
+      ]
     }
   ]
 }

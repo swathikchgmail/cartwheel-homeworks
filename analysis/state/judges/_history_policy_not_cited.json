@@ -1,0 +1,16 @@
+{
+  "versions": [
+    {
+      "judge_id": "policy_not_cited-v0",
+      "prompt_hash": "cf7b1b7e8d15"
+    },
+    {
+      "judge_id": "policy_not_cited-v1",
+      "prompt_hash": "708f50315621"
+    },
+    {
+      "judge_id": "policy_not_cited-v2",
+      "prompt_hash": "7733950f0d60"
+    }
+  ]
+}
