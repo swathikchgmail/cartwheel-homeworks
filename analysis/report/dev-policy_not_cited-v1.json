@@ -1,0 +1,28 @@
+{
+  "judge_id": "policy_not_cited-v1",
+  "prompt_path": "",
+  "model": "gpt-4o-mini",
+  "split": "dev",
+  "tpr": 0.8788,
+  "tnr": 1.0,
+  "tpr_interval": [
+    0.7267,
+    0.9518
+  ],
+  "tnr_interval": [
+    0.6756,
+    1.0
+  ],
+  "agreement": 0.9024,
+  "tp": 29,
+  "fn": 4,
+  "tn": 8,
+  "fp": 0,
+  "n": 41,
+  "disagreements": [
+    "3298f3900d7f956b981994b31caba973",
+    "707694012c9cbdff4f68e91fd3a4480d",
+    "71b4bdd6bc8a1734232354d90eaa5e06",
+    "e673679946dbf750c7db37363e49f39e"
+  ]
+}
