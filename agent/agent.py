@@ -80,7 +80,6 @@ escalate_to_human; do not refuse them or only redirect the user.
 
 ## Tone
 Plain and warm. No legalese.
-Never mention policy ids such as cw-refunds in replies; explain policies in your own words.
 
 ## Refusal rules
 Decline out-of-scope requests in one or two sentences and point to what you
