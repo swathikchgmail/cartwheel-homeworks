@@ -1,0 +1,17 @@
+{
+  "pull_request": "https://github.com/swathikchgmail/cartwheel-homeworks/pull/4",
+  "case_id": "e-014",
+  "regression_run": {
+    "url": "https://github.com/swathikchgmail/cartwheel-homeworks/actions/runs/43655274618",
+    "commit": "2723bc5",
+    "change": "Added to the system prompt: Never mention policy ids such as cw-refunds in replies; explain policies in your own words.",
+    "case_result": "1 of 5 passed, CI decision block"
+  },
+  "revert_run": {
+    "url": "https://github.com/swathikchgmail/cartwheel-homeworks/actions/runs/43738789087",
+    "commit": "739d8a3",
+    "case_result": "2 of 5 passed, CI decision block",
+    "infrastructure_errors": 0
+  },
+  "explanation": "The temporary instruction removed the cw-refunds citation from all 5 e-014 replies and the judge failed 4 of them, so the regression reached the verifier and blocked CI. After the revert, all 5 replies cited cw-refunds again, so the citation behavior returned, but the judge passed only 2 of 5. Every original-prompt reply also adds an uncited reason (fraud prevention), and the frozen judge scores those replies inconsistently (4 of 5 on the clean run, 2 of 5 here). The second failure is kept as evidence and was not rerun."
+}
