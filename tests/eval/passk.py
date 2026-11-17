@@ -59,7 +59,11 @@ def pass_at_k(n: int, c: int, k: int) -> float:
                                     a success)
     """
     ### YOUR CODE HERE (hw6)
-    raise NotImplementedError("hw6: implement pass_at_k")
+    # Time O(k) (math.comb multiplies k terms), space O(1).
+    _validate(n, c, k)
+    if n - c < k:
+        return 1.0
+    return 1.0 - comb(n - c, k) / comb(n, k)
 
 
 def pass_hat_k(n: int, c: int, k: int) -> float:
@@ -91,7 +95,11 @@ def pass_hat_k(n: int, c: int, k: int) -> float:
         pass_hat_k(8, 6, 8) == 0.0  (not all 8 succeeded)
     """
     ### YOUR CODE HERE (hw6)
-    raise NotImplementedError("hw6: implement pass_hat_k")
+    # Time O(k), space O(1).
+    _validate(n, c, k)
+    if c < k:
+        return 0.0
+    return comb(c, k) / comb(n, k)
 
 
 def case_passes(
@@ -141,4 +149,28 @@ def case_passes(
         case_passes("capability", 1, 5, 0.6)     -> pass  (never blocks)
     """
     ### YOUR CODE HERE (hw6)
-    raise NotImplementedError("hw6: implement case_passes")
+    # Time O(1), space O(1).
+    if kind not in ("regression", "capability"):
+        raise ValueError(f"unknown case kind: {kind!r}")
+    if n < 1 or not 0 <= passes <= n:
+        raise ValueError(f"passes must be in [0, n] with n >= 1, got {passes} of {n}")
+    if kind == "regression":
+        failed = n - passes
+        if failed:
+            return {"decision": "block", "reason": f"regression case failed {failed} of {n} runs"}
+        return {"decision": "pass", "reason": f"regression case passed {passes} of {n} runs"}
+    baseline = "none" if baseline_pass_rate is None else f"{baseline_pass_rate:g}"
+    return {
+        "decision": "pass",
+        "reason": f"capability case passed {passes} of {n}, baseline {baseline}, not blocking",
+    }
+
+
+def _validate(n: int, c: int, k: int) -> None:
+    """Raise ValueError unless n >= 1, 0 <= c <= n, and 1 <= k <= n."""
+    if n < 1:
+        raise ValueError(f"n must be >= 1, got {n}")
+    if not 0 <= c <= n:
+        raise ValueError(f"c must be in [0, {n}], got {c}")
+    if not 1 <= k <= n:
+        raise ValueError(f"k must be in [1, {n}], got {k}")
